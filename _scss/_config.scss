@@ -1,0 +1,84 @@
+/*--------------------------------------------------------------
+# config
+  以下の項目を編集して使用してください。
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# base fontの設定
+--------------------------------------------------------------*/
+
+/* ベースの文字サイズの設定 */
+$base-font-size: 16; // pxの数値を設定
+$base-font-size-px: $base-font-size * 1px;
+$base-font-size-rem: ($base-font-size / $base-font-size) * 1rem;
+
+/* ベースの行間の設定 */
+$base-line-height-px: 24; // pxの数値を設定
+$base-line-height: $base-line-height-px / $base-font-size;
+
+/* ベースの書体の設定*/
+$base-font-familiy: ;
+
+/*--------------------------------------------------------------
+# site colorの設定
+--------------------------------------------------------------*/
+
+/* サイトカラーの設定 */
+// メインカラー
+$main-color: ;
+// サブカラー
+$sub-color: ;
+// テキストカラー
+$txt-color: ;
+// 背景色
+$bg-color: ;
+// ボーダー色
+$border-color: ;
+
+/* リンクカラーの設定 */
+// リンクカラー
+$a-link-color: ;
+// リンクカラー訪問済み
+$a-visited-color: ;
+// リンクカラーマウスオン時
+$a-hover-color: ;
+// リンクカラークリック時
+$a-active-color: ;
+
+/* ボタンカラー */
+// ボタンカラー
+$btn-color: ;
+// ボタンマウスオン時
+$btn-hover-color: ;
+// ボタンクリック時
+$btn-active-color: ;
+
+
+/*--------------------------------------------------------------
+# layoutの設定
+--------------------------------------------------------------*/
+
+/* breakpointの設定 */
+// 大型モニター
+$min-xl: 1200px;
+$max-lg: $min-xl - 1;
+$min-lg: 992px;
+$max-md: $min-lg - 1;
+$min-md: 768px;
+$max-sm: $min-md - 1;
+$min-sm: 576px;
+$max-xs: $min-sm -1;
+
+/* headerの高さ */
+$xl-header-height: ;
+$lg-header-height: ;
+$md-header-height: ;
+$sm-header-height: ;
+$xs-header-height: ;
+
+/* footerの高さ */
+$xl-footer-height: ;
+$lg-footer-height: ;
+$md-footer-height: ;
+$sm-footer-height: ;
+$xs-footer-height: ;

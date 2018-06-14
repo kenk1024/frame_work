@@ -1,0 +1,112 @@
+/*--------------------------------------------------------------
+# elements
+--------------------------------------------------------------*/
+
+/* form elemnts*/
+
+// text
+.form-text {
+  border: 1px solid $border-color;
+  height: $base-line-height-px;
+  font-size: $base-font-size-px;
+  font-size: $base-font-size-rem;
+  line-height: $base-line-height;
+  padding: 0 5px;
+}
+
+// radio
+.form-radio {
+  input[type="radio"] {
+    display: none;
+  }
+  span {
+    display: block;
+    padding: 0 0 0 24px;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      background: #ededed;
+      border: 1px solid #ccc;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background: #ededed;
+      border: 1px solid #ccc;
+    }
+  }
+  input[type="radio"]:checked + span:after {
+    opacity: 1;
+    transition: .1s;
+  }
+}
+
+// checkbox
+.form-checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+  span {
+    display: block;
+    padding: 0 0 0 24px;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      background: #ededed;
+      border: 1px solid #ccc;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      width: 6px;
+      height: 3px;
+      transform: rotate(-45deg);
+      border-bottom: 2px solid #333;
+      border-left: 2px solid #333;
+      opacity: 0;
+      transition: .1s;
+    }
+  }
+  input[type="checkbox"]:checked + span:after {
+    opacity: 1;
+    transition: .1s;
+  }
+}
+
+// text-area
+.form-text-area {
+  border: 1px solid $border-color;
+  height: $base-line-height-px;
+  font-size: $base-font-size-px;
+  font-size: $base-font-size-rem;
+  line-height: $base-line-height;
+  padding: 0 5px;
+}
+
+.btn {
+  @include box(100px, 60px, 10px);
+}
+

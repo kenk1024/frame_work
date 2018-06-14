@@ -1,0 +1,46 @@
+/*--------------------------------------------------------------
+# mixin
+## font
+ * font-size
+ * font-weight
+## element
+ * box
+ * circle
+--------------------------------------------------------------*/
+
+/* font */
+
+// font-size
+@mixin font-size($fs: 16,$lh: 24) {
+  font-size: $fs * 1px;
+  font-size: $fs / $base-font-size * 1rem;
+  line-height: $lh / $fs;
+}
+// font-weight
+@mixin font-weight($fw) {
+  font-weight: $fw;
+}
+
+@mixin color-saturate()
+
+/* element */
+
+// box
+@mixin box($w,$h,$br: 10px) {
+  @if $br == 0 {
+    width: $w;
+    height: $h;
+  }
+  @else {
+    width: $w;
+    height: $h;
+    border-radius: $br;
+  }
+}
+// circle
+@mixin circle {
+  border-radius: 100%;
+}
+
+/* form */
+

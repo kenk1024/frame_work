@@ -1,0 +1,32 @@
+/*--------------------------------------------------------------
+# typography
+--------------------------------------------------------------*/
+
+/* webフォントの読み込み */
+
+// Noto Sans JP 読み込み
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+//Mplus 1p 読み込み
+@import url(//fonts.googleapis.com/earlyaccess/mplus1p.css);
+//Rounded Mplus 1c 読み込み
+@import url(////fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
+
+/* フォントの指定 */
+$font-family-sans-serif: "Noto Sans JP", "Hiragino Kaku Gothic Pro", Meiryo, Osaka, "MS PGothic", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+/* フォントウェイトの設定 */
+
+//Noto Sans Japanese font weight
+$nsj-t: 100;
+$nsj-l: 200;
+$nsj-dl: 300;
+$nsj-r: 400;
+$nsj-m: 500;
+$nsj-bd: 700;
+$nsj-bl: 900;
+
+
+
+

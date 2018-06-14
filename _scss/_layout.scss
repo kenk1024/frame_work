@@ -1,0 +1,138 @@
+/*--------------------------------------------------------------
+# layout
+--------------------------------------------------------------*/
+
+@media (max-width: $max-xs) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $xs-header-height;
+  }
+
+  main {
+    margin: 0;
+    padding: $xs-header-height 0 $xs-footer-height;
+    height: 100vh;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $xs-footer-height;
+  }
+}
+
+@media (min-width: $min-sm) and (max-width: $max-sm) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $sm-header-height;
+  }
+
+  main {
+    margin: 0;
+    padding: $sm-header-height 0 $sm-footer-height;
+    height: 100vh;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $sm-footer-height;
+  }
+}
+
+@media (min-width: $min-md) and (max-width: $max-md) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $md-header-height;
+  }
+
+  main {
+    margin: 0;
+    padding: $md-header-height 0 $md-footer-height;
+    height: 100vh;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $md-footer-height;
+  }
+}
+
+@media (min-width: $min-lg) and (max-width: $max-lg) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $lg-header-height;
+  }
+
+  main {
+    margin: 0;
+    padding: $lg-header-height 0 $lg-footer-height;
+    height: 100vh;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $lg-footer-height;
+  }
+}
+
+@media (min-width: $min-xl) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $xl-header-height;
+  }
+
+  main {
+    margin: 0;
+    padding: $xl-header-height 0 $xl-footer-height;
+    height: 100vh;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $xl-footer-height;
+  }
+}
