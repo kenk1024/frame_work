@@ -6,19 +6,21 @@
 
 // Noto Sans JP 読み込み
 @import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
-//Mplus 1p 読み込み
+// Mplus 1p 読み込み
 @import url(//fonts.googleapis.com/earlyaccess/mplus1p.css);
-//Rounded Mplus 1c 読み込み
+// Rounded Mplus 1c 読み込み
 @import url(////fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
 
 /* フォントの指定 */
-$font-family-sans-serif: "Noto Sans JP", "Hiragino Kaku Gothic Pro", Meiryo, Osaka, "MS PGothic", sans-serif;
+
+// sans-serif
+$font-family-sans-serif: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI","Roboto","Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, Osaka, "MS PGothic","Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 /* フォントウェイトの設定 */
 
-//Noto Sans Japanese font weight
+// Noto Sans Japanese font weight
 $nsj-t: 100;
 $nsj-l: 200;
 $nsj-dl: 300;

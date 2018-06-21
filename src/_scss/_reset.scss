@@ -79,6 +79,19 @@ a:hover {
   outline-width: 0;
 }
 
+a,
+area,
+button,
+[role="button"],
+input:not([type=range]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
 input {
   border-radius: 0;
 }
