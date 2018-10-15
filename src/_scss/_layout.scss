@@ -2,10 +2,23 @@
 # layout
 --------------------------------------------------------------*/
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
 @media (max-width: $max-xs) {
   body {
     position: relative;
-    min-height: 100vh;
+    min-height: ;
   }
 
   header {

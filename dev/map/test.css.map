@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.scss","test.css"],"names":[],"mappings":"AAEA;EACE,YAAY;CCAb;AACD;EACE,UAAW;CACZ","file":"../test.css","sourcesContent":["/* Scss Document */\r\n\r\n.test-box{\r\n  width: 100px;\r\n  .test {\r\n    width: 50%;\r\n  }\r\n}","/* Scss Document */\n.test-box {\n  width: 100px;\n}\n.test-box .test {\n  width: 50%;\n}"]}

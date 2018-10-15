@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+# typography
+--------------------------------------------------------------*/
+
+/* webフォントの読み込み */
+
+/* Noto Sans JP
+thin: 100, light: 300, regular: 400, mediam: 500, bold: 700, black: 900
+------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900&subset=japanese");
+
+/* Noto Serif JP
+extra-light: 200, light: 300, regular: 400, mediam: 500,
+semi-bold: 600, bold: 700, black: 900,
+------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900&subset=japanese");
+
+/* M PLUS 1p
+thin: 100, light: 300, regular: 400, mediam: 500, bold: 700,
+extra-bold: 800, black: 900
+------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900&subset=japanese");
+
+/* Rounded Mplus 1c 読み込み
+thin: 100, light: 300, regular: 400, mediam: 500, bold: 700,
+extra-bold: 800, black: 900
+------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300,400,500,700,800,900&subset=japanese");
+
+/* フォントの指定 */
+
+// sans-serif
+$ff-ss: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI","Roboto","Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, Osaka, "MS PGothic","Helvetica Neue", Arial, sans-serif !default;
+$ff-s: Georgia, "Times New Roman", "Noto Serif JP", Times, serif !default;
+$ff-m: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+/* フォントウェイトの設定 */
+
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+

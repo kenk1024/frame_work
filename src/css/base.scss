@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// scss用基本情報
+@import "../_scss/_base/color";
+@import "../_scss/_base/typography";
+@import "../_scss/_base/config";
+@import "../_scss/_base/mixin";
+/*!-------------------------------------------------------------
+# reset
+--------------------------------------------------------------*/
+@import "../_scss/_reset";
