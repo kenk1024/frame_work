@@ -6,6 +6,10 @@
 const paths = {
   //ソースのパス
   'src': 'src/',
+  //sassフォルダ
+  'sass': ['src/css/'],
+  //sassパーシャルファイル
+  'module': 'src/css/_module/',
   //出力先のパス
   'dist': 'dev/',
   //納品ファイルのパス
@@ -67,6 +71,8 @@ const plumber = require('gulp-plumber');
 //処理をデスクトップ通知する
 const notify = require('gulp-notify');
 //新しいファイルのみ処理させる
+const changed = require('gulp-changed');
+const cached = require('gulp-cached');
 const newer = require('gulp-newer');
 //ejsをコンパイルする
 const ejs = require('gulp-ejs');
@@ -148,7 +154,7 @@ gulp.task('webserver', (cb) => {
   browsersync.init(null, {
     proxy: servers.pxserv,
     port: servers.wbport,
-    browser: ["chrome.exe", "firefox.exe" ,"iexplore.exe"],
+    browser: ["chrome.exe", "firefox.exe" ,"iexplore.exe","microsoft-edge:http://localhost:8051"],
   });
   cb();
 });
@@ -160,6 +166,7 @@ gulp.task('webserver', (cb) => {
 gulp.task('watch', () => {
   gulp.watch([paths.src + '**/*.{css,scss}'],gulp.series('sass'));
   gulp.watch([paths.src + '**/*.{html,inc,shtml}'],gulp.series('html'));
+  gulp.watch([paths.src + '**/*.php'],gulp.series('php'));
   gulp.watch([paths.src + '**/*.ejs'],gulp.series('ejs'));
   gulp.watch([paths.src + '**/*.{gif,jpg,jpeg,png,svg}'],gulp.series('image'));
   gulp.watch([paths.src + '**/*.js'],gulp.series('js'));
@@ -197,7 +204,6 @@ gulp.task('ejs', () => {
       errorHandler: notify.onError("エラーがあります。: <%= error.message %>")
     }))
     .pipe(ejs({}, {}, {"ext": ".html"}))
-    //.pipe(replace(/^\r\n/g,''))
     .pipe(prettify({
       "indent_size": 2,
       "indent_char": " ",
@@ -228,6 +234,28 @@ gulp.task('html', () => {
     .pipe(browsersync.reload({stream: true}));
 });
 
+/*
+php出力
+---------------------------------*/
+gulp.task('php', () => {
+  return gulp.src(paths.src + '**/*.php', {base: paths.src})
+    .pipe(newer(paths.dist))
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+    }
+  }))
+    .pipe(prettify({
+      "indent_size": 2,
+      "indent_char": " ",
+      "indent_with_tabs": false,
+    }))
+    .pipe(gulp.dest(paths.dist))
+    .pipe(browsersync.reload({stream: true}));
+});
+
+
 
 /*
 納品html出力
@@ -250,13 +278,16 @@ gulp.task('sass', () => {
 //    assets({loadPaths: [paths.src + 'common/img']}),
     cmq({sort: true})
   ];
+
   return gulp.src(paths.src + '**/*.scss', {base: paths.src})
     .pipe(plumber({
       errorHandler: notify.onError("エラーがあります。: <%= error.message %>")
   }))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
+    .pipe(changed(paths.dist))
     .pipe(sass({
-    importer: moduleimporter()
+      outputStyle: 'expanded',
+      importer: moduleimporter()
   }))
     .pipe(csscomb())
     .pipe(postcss(processors))
@@ -268,7 +299,7 @@ gulp.task('sass', () => {
       discardUnused: {fontFace: false},
       reduceIdents: false
     }))
-    .pipe(sourcemaps.write('./map'))
+    //.pipe(sourcemaps.write('./map'))
     .pipe(gulp.dest(paths.dist))
     .pipe(browsersync.reload({stream: true}))
     .pipe(minifycss({compatibility: {properties: {colors: false}}}))
@@ -395,7 +426,7 @@ gulp.task('clean-deploy', () => {
 /*
 html,sass,image,js,faviconの並列処理
 ---------------------------------*/
-gulp.task('dist', gulp.parallel('html','sass','js','ejs','image','favicon'), (done) => {
+gulp.task('dist', gulp.parallel('html','php','sass','js','ejs','image','favicon'), (done) => {
   done();
 });
 

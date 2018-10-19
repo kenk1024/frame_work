@@ -37,6 +37,8 @@
 /*
 # block element
 --------------------------------------------------------------*/
+
+/* html */
 html {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -46,11 +48,12 @@ html {
   line-height: $base-lh;
 }
 
+/* body */
 body {
   text-align: left;
-  background: $bg-color;
-  color: $base$bg-cr;
-  font-fa$txt-cly-sans-serif;
+  //background: $clr-bg;
+  //color: $clr-txt;
+  font-family: $ff-ss;
   font-size: $base-fsp;
   font-size: $base-fsr;
   -moz-osx-font-smoothing : grayscale;
@@ -59,15 +62,28 @@ body {
   line-height: $base-lh;
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section ay: block;
+/* 旧バージョンのブラウザ用 */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
 }
 
+/* hr */
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
+/* 見出し */
 h1,
 h2,
 h3,
@@ -75,30 +91,29 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: $h-btm-padding;
+  margin-bottom: $h-btm-pdg;
 }
 
+/* 段落 */
 p {
   margin-top: 0;
-  margin-bottom: $p-btm-padding;
+  margin-bottom: $p-btm-pdg;
 }
 
+/* リスト */
 ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: $lst-btm-padding;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
   margin-bottom: 0;
+  ol,
+  ul {
+    margin-bottom: 1rem;
+  }
 }
 
 dt {
-  font-weight: $dt-font-weight;
+  font-weight: $dt-fw;
 }
 
 dd {
@@ -106,14 +121,15 @@ dd {
   margin-left: 0;
 }
 
+/* テーブル */
 table {
   border-collapse: collapse;
 }
 
 caption {
-  padding-top: $table-cell-padding;
-  padding-bottom: $table-cell-padding;
-  color: $table-caption-color;
+  padding-top: $tbl-cl-tp-pdg;
+  padding-bottom: $tbl-cl-btm-pdg;
+  //color: $tbl-cpt-clr;
   text-align: left;
   caption-side: bottom;
 }
@@ -125,20 +141,22 @@ th {
 /*
 # inline element
 --------------------------------------------------------------*/
+
+/* リンク */
 a {
-  color: $lnk-clr;
+  //color: $clr-lnk;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   &:hover {
-    color: $lnk-h-clr;
+    //color: $clr-h-lnk;
     text-decoration: none;
     outline-width: 0;
   }
   &:visited {
-    color: $lnk-v-clr;
+    //color: $clr-v-lnk;
   }
   &:active {
-    color: $lnk-a-clr;
+    //color: $clr-a-lnk;
     text-decoration: none;
     outline-width: 0;
   }
@@ -147,7 +165,7 @@ a {
 a:not([href]):not([tabindex]) {
   color: inherit;
   text-decoration: none;
-  @include hover-focus {
+  &:hover {
     color: inherit;
     text-decoration: none;
   }
@@ -156,6 +174,7 @@ a:not([href]):not([tabindex]) {
   }
 }
 
+/* タッチスクリーンでの挙動 */
 a,
 area,
 button,
@@ -169,6 +188,7 @@ textarea {
       touch-action: manipulation;
 }
 
+/* フォーム */
 input {
   border-radius: $input-r;
 }
@@ -288,8 +308,31 @@ legend {
   outline-offset: -2px;
 }
 
+input[type="radio"]:checked::before {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  //background: $clr-stext;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input[type="radio"]:checked::after {
+  display: block;
+  width: .6rem;
+  height: .6rem;
+  border-radius: 100%;
+  //background: $clr-main;
+  position: absolute;
+  top: .2rem;
+  left: .2rem;
+}
+
+/* 画像 */
 figure {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 img {
@@ -307,24 +350,22 @@ input[type="checkbox"] {
   position: relative;
 }
 
-input[type="radio"]:checked::before {
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 100%;
-  background: $stext-clr;
-  position: absolute;
-  top: 0;
-  left: 0;
+/* コード */
+pre,
+code,
+kbd,
+samp {
+  font-family: $ff-m;
+  font-size: 1em;
 }
 
-input[type="radio"]:checked::after {
-  display: block;
-  width: .6rem;
-  height: .6rem;
-  border-radius: 100%;
-  background: $main-clr;
-  position: absolute;
-  top: .2rem;
-  left: .2rem;
+pre {
+  margin: 0 0 1rem;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+
+/* 非表示データ */
+[hidden] {
+  display: none !important;
 }

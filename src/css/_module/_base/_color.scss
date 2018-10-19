@@ -1,0 +1,65 @@
+/*!--------------------------------------------------------------
+# color
+--------------------------------------------------------------*/
+/* color list */
+
+$primary: #26547c;
+$primary-lt: lighten($primary, 20%);
+$primary-dk: darken($primary, 15%);
+$secondary: #d90368;
+$secondary-lt: lighten($secondary, 20%);
+$secondary-dk: darken($secondary, 15%);
+$gray: #8d8891;//#a5a1a2;
+$gray-lt: lighten($gray, 25%);
+$gray-dk: darken($gray, 25%);
+$black: darken($gray, 55%);
+$white: lighten($gray, 43%);
+$success: #00cc66;
+$success-lt: lighten($success, 30%);
+$danger: #e3170a;
+$danger-lt: lighten($danger, 30%);
+$warning: #f9c80e; 
+$warning-lt: lighten($warning, 30%); 
+$info: #3da5d9;
+$info-lt: lighten($info, 30%);
+$color-list: (
+  primary: $primary,
+  primary-lt: $primary-lt,
+  primary-dk: $primary-dk,
+  secondary: $secondary,
+  secondary-lt: $secondary-lt,
+  secondary-dk: $secondary-dk,
+  gray: $gray,
+  gray-lt: $gray-lt,
+  gray-dk: $gray-dk,
+  black: $black,
+  white: $white,
+  success: $success,
+  success-lt: $success-lt,
+  danger: $danger,
+  danger-lt: $danger-lt,
+  warning: $warning, 
+  warning-lt: $warning-lt,
+  info: $info,
+  info-lt: $info-lt,
+);
+
+@each $name, $color in $color-list {
+  .cl-#{$name} {
+     color: $color;
+  }
+}
+
+@each $name, $color in $color-list {
+  .bg-#{$name} {
+     background: $color;
+  }
+}
+
+@each $name, $color in $color-list {
+  .bd-#{$name} {
+     border: $color;
+  }
+}
+
+
