@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"../style.css","sourcesContent":[]}
+{"version":3,"file":"../style.css","sources":["style.scss"],"sourcesContent":["@charset \"utf-8\";\r\n/*\r\nTheme Name: テーマ名\r\nTheme URI: テーマURI — テーマの配布ページなど\r\nDescription: テーマの解説\r\nAuthor: 作者の名前\r\nAuthor URI: 作者のURI\r\nVersion: バージョン\r\nTags: テーマに関するタグ（キーワード）をカンマ区切りで記述（オプション）\r\nLicense: ライセンス\r\nLicense URI: ライセンスURI\r\nコメント (オプション)\r\n*/"],"names":[],"mappings":";AACA;;;;;;;;;;;EAWE"}

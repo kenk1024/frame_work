@@ -46,5 +46,7 @@
     "postcss-cssnext": "^3.1.0",
     "sass-module-importer": "^1.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-sass-partials-imported": "^1.0.6"
+  }
 }

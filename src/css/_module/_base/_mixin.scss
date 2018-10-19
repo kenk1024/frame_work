@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+# mixin
+## font
+ * font-size
+ * font-weight
+## color
+## element
+ * box
+ * circle
+--------------------------------------------------------------*/
+
+/* font */
+
+// font-size
+@mixin font-size($fs: 16, $lh: 24) {
+  font-size: $fs * 1px;
+  font-size: $fs / $base-fs * 1rem;
+  line-height: $lh / $fs;
+}
+
+// font-weight
+@mixin font-weight($fw: 400) {
+  font-weight: $fw;
+}
+
+/* color */
+// 文字色の明度を上げる
+@mixin clr-ltn($clr-ltn: #ff0000, $clr-ltn-p: 50%) {
+  color: lighten($clr-strt, $clr-ltn-p);
+}
+
+// 文字色の明度を下げる
+@mixin clr-dkn($clr-dkn: #ff0000, $clr-dkn-p: 50%) {
+  color: darken($clr-strt, $clr-dkn-p);
+}
+
+// 文字色の彩度を上げる
+@mixin clr-st($clr-st: #ff0000, $clr-st-p: 50%) {
+  color: saturate($clr-strt, $clr-st-p);
+}
+
+// 文字色の彩度を下げる
+@mixin clr-dst($clr-dst: #ff0000, $clr-dst-p: 50%) {
+  color: desaturate($clr-strt, $clr-dst-p);
+}
+
+// 背景色の明度を上げる
+@mixin bg-lighten($bg-ltn: #ff0000, $bg-ltn-p: 50%) {
+  background: lighten($bg-ltn, $bg-ltn-p);
+}
+
+// 背景色の明度を下げる
+@mixin bg-darken($bg-dkn: #ff0000, $bg-dkn-p: 50%) {
+  background: darken($bg-dkn, $bg-dkn-p);
+}
+
+// 背景色の彩度を上げる
+@mixin bg-saturate($bg-st: #ff0000, $bg-st-p: 50%) {
+  background: saturate($bg-st, $bg-st-p);
+}
+
+// 背景色の彩度を下げる
+@mixin bg-desaturate($bg-dst: #ff0000, $bg-dst-p: 50%) {
+  background: desaturate($bg-dst, $bg-dst-p);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* element */
+
+// box
+@mixin box($w,$h,$br: 10px) {
+  @if $br == 0 {
+    width: $w;
+    height: $h;
+  }
+  @else {
+    width: $w;
+    height: $h;
+    border-radius: $br;
+  }
+}
+// circle
+@mixin circle {
+  border-radius: 100%;
+}
+
+/* form */
+

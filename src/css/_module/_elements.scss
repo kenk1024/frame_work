@@ -6,11 +6,10 @@
 
 // text
 .form-text {
-  border: 1px solid $border-color;
-  height: $base-line-height-px;
-  font-size: $base-font-size-px;
-  font-size: $base-font-size-rem;
-  line-height: $base-line-height;
+  border: 1px solid $clr-bdr;
+  font-size: $base-fsp;
+  font-size: $base-fsr;
+  line-height: $base-lh;
   padding: 0 5px;
 }
 
@@ -20,32 +19,32 @@
     display: none;
   }
   span {
-    display: block;
-    padding: 0 0 0 24px;
+    display: inline-block;
+    padding: 0 0 0 1rem;
     position: relative;
-    height: 24px;
-    line-height: 24px;
-    font-size: 16px;
+    height: 1rem;
+    font-size: $base-fsp;
+    font-size: $base-fsr;
+    line-height: $base-lh;
     &::before {
       content: "";
       position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: #ededed;
-      border: 1px solid #ccc;
+      top: 0;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      background: $clr-stext;
     }
     &::after {
       content: "";
       position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
+      top: .2rem;
+      left: .2rem;
+      width: .6rem;
+      height: .6rem;
       border-radius: 100%;
-      background: #ededed;
-      border: 1px solid #ccc;
+      background: $clr-accnt;
     }
   }
   input[type="radio"]:checked + span:after {
@@ -98,12 +97,12 @@
 
 // text-area
 .form-text-area {
-  border: 1px solid $border-color;
-  height: $base-line-height-px;
-  font-size: $base-font-size-px;
-  font-size: $base-font-size-rem;
-  line-height: $base-line-height;
-  padding: 0 5px;
+  border: 1px solid $clr-bdr;
+  height: $base-lh-px;
+  font-size: $base-fsp;
+  font-size: $base-fsr;
+  line-height: $base-lh;
+  padding: 0 .6rem;
 }
 
 .btn {
