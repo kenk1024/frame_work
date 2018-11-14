@@ -287,7 +287,11 @@ gulp.task('sass', () => {
     .pipe(changed(paths.dist))
     .pipe(sass({
       outputStyle: 'expanded',
+<<<<<<< HEAD
       //importer: moduleimporter()
+=======
+      importer: moduleimporter()
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
   }))
     //.pipe(csscomb())
     //.pipe(postcss(processors))
@@ -298,7 +302,11 @@ gulp.task('sass', () => {
       minifySelectors:false,
       discardUnused: {fontFace: false},
       reduceIdents: false
+<<<<<<< HEAD
     }))*/
+=======
+    }))
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
     //.pipe(sourcemaps.write('./map'))
     .pipe(gulp.dest(paths.dist))
     .pipe(browsersync.reload({stream: true}))

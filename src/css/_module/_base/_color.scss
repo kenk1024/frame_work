@@ -2,6 +2,10 @@
 # color
 --------------------------------------------------------------*/
 /* color list */
+<<<<<<< HEAD
+=======
+
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
 $primary: #26547c;
 $primary-lt: lighten($primary, 20%);
 $primary-dk: darken($primary, 15%);
@@ -11,6 +15,7 @@ $secondary-dk: darken($secondary, 15%);
 $gray: #8d8891;//#a5a1a2;
 $gray-lt: lighten($gray, 25%);
 $gray-dk: darken($gray, 25%);
+<<<<<<< HEAD
 $dark: darken($gray, 55%);
 $light: lighten($gray, 43%);
 $black :#000;
@@ -30,6 +35,18 @@ $info-dk: darken($info, 15%);
 $sns-fb: #3b5998;
 $sns-tw: #55acee;
 $sns-ln: #00b900;
+=======
+$black: darken($gray, 55%);
+$white: lighten($gray, 43%);
+$success: #00cc66;
+$success-lt: lighten($success, 30%);
+$danger: #e3170a;
+$danger-lt: lighten($danger, 30%);
+$warning: #f9c80e; 
+$warning-lt: lighten($warning, 30%); 
+$info: #3da5d9;
+$info-lt: lighten($info, 30%);
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
 $color-list: (
   primary: $primary,
   primary-lt: $primary-lt,
@@ -40,6 +57,7 @@ $color-list: (
   gray: $gray,
   gray-lt: $gray-lt,
   gray-dk: $gray-dk,
+<<<<<<< HEAD
   dark: $dark,
   light: $light,
   success: $success,
@@ -54,27 +72,54 @@ $color-list: (
   info: $info,
   info-lt: $info-lt,
   info-dk: $info-dk,
+=======
+  black: $black,
+  white: $white,
+  success: $success,
+  success-lt: $success-lt,
+  danger: $danger,
+  danger-lt: $danger-lt,
+  warning: $warning, 
+  warning-lt: $warning-lt,
+  info: $info,
+  info-lt: $info-lt,
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
 );
 
 @each $name, $color in $color-list {
   .cl-#{$name} {
+<<<<<<< HEAD
     color: $color;
+=======
+     color: $color;
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
   }
 }
 
 @each $name, $color in $color-list {
   .bg-#{$name} {
+<<<<<<< HEAD
     background: $color;
+=======
+     background: $color;
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
   }
 }
 
 @each $name, $color in $color-list {
   .bd-#{$name} {
+<<<<<<< HEAD
     border: 1px solid $color;
+=======
+     border: $color;
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
   }
 }
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d

@@ -1,13 +1,20 @@
 // scss用基本情報
 @import "_module/_base/typography";
+<<<<<<< HEAD
 @import "_module/_base/color";
 @import "_module/_base/config";
 @import "_module/_base/mixin";
 
+=======
+@import "_module/_base/config";
+@import "_module/_base/color";
+@import "_module/_base/mixin";
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
 /*!-------------------------------------------------------------
 # reset
 --------------------------------------------------------------*/
 @import "_module/_reset";
+<<<<<<< HEAD
 
 /*!-------------------------------------------------------------
 # element
@@ -23,3 +30,5 @@
 # color
 --------------------------------------------------------------*/
 @import "_module/_parts/_color";
+=======
+>>>>>>> c2adfdb5f5f15cfc7bbe8e1849f16e6337f2d09d
