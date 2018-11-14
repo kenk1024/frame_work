@@ -287,18 +287,18 @@ gulp.task('sass', () => {
     .pipe(changed(paths.dist))
     .pipe(sass({
       outputStyle: 'expanded',
-      importer: moduleimporter()
+      //importer: moduleimporter()
   }))
-    .pipe(csscomb())
-    .pipe(postcss(processors))
-    .pipe(cssnano({
+    //.pipe(csscomb())
+    //.pipe(postcss(processors))
+    /*.pipe(cssnano({
       colormin:false,
       core:false,
       minifyFontValues:false,
       minifySelectors:false,
       discardUnused: {fontFace: false},
       reduceIdents: false
-    }))
+    }))*/
     //.pipe(sourcemaps.write('./map'))
     .pipe(gulp.dest(paths.dist))
     .pipe(browsersync.reload({stream: true}))

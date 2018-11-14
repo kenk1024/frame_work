@@ -24,12 +24,29 @@
   vertical-align: inherit;
 }
 
-* {
-  padding: 0;
-  margin: 0;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  vertical-align:baseline;
+  background:transparent;
+  &:focus {
+    outline: 0 !important;
+  }
 }
 
-*:focus,
 [tabindex= "-1"]:focus {
   outline: 0 !important;
 }
@@ -106,6 +123,7 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 0;
+  list-style: none;
   ol,
   ul {
     margin-bottom: 1rem;
@@ -189,9 +207,9 @@ textarea {
 }
 
 /* フォーム */
-input {
+/*input {
   border-radius: $input-r;
-}
+}*/
 
 button,
 input[type="button"],
@@ -202,7 +220,6 @@ input[role="button"],
   display: block;
   cursor: pointer;
   overflow: visible;
-  appearance: button;
 }
 
 [disabled] {
@@ -236,6 +253,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  display: block;
 }
 
 optgroup {

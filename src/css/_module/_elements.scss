@@ -5,107 +5,260 @@
 /* form elemnts*/
 
 // text
-.form-text {
-  border: 1px solid $clr-bdr;
-  font-size: $base-fsp;
-  font-size: $base-fsr;
-  line-height: $base-lh;
-  padding: 0 5px;
+.frm-text,
+.frm-password {
+  border: $txt-brd-w $txt-brd-s $txt-brd-c;
+  border-radius: $txt-rds;
+  @include font-size($base-fs, $txt-lh);
+  height: ($txt-lh / $base-fs * 1rem) + ($txt-pdg * 2);
+  padding: $txt-pdg;
+  background: $txt-bg;
 }
 
+// textarea
+.frm-textarea {
+  border: $txt-brd-w $txt-brd-s $txt-brd-c;
+  border-radius: $txt-rds;
+  @include font-size($base-fs, $txt-lh);
+  height: ($txt-lh / $base-fs * 1rem * $txt-lag) + ($txt-pdg * 2);
+  padding: $txt-pdg;
+  background: $txt-bg;
+}
+
+
 // radio
-.form-radio {
+.frm-radio {
+  margin: 0 1rem 0 0;
+  display: flex;
   input[type="radio"] {
     display: none;
   }
-  span {
-    display: inline-block;
-    padding: 0 0 0 1rem;
+  i {
+    display: block;
+    margin: 0 .25em 0 0;
     position: relative;
-    height: 1rem;
-    font-size: $base-fsp;
-    font-size: $base-fsr;
-    line-height: $base-lh;
+    width: $rdo-b-w;
+    @include font-size($base-fs, $rdo-lh);
     &::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 1rem;
-      height: 1rem;
+      top: 50%;
+      left: 50%;
+      width: $rdo-b-w * .8;
+      height: $rdo-b-h * .8;
       border-radius: 100%;
-      background: $clr-stext;
+      background: $rdo-b-c;
+      border: $rdo-b-brd-w $rdo-b-brd-s $rdo-b-brd-c;
+      transform: translate(-50%, -50%);
+      display: block;
     }
     &::after {
       content: "";
       position: absolute;
-      top: .2rem;
-      left: .2rem;
-      width: .6rem;
-      height: .6rem;
+      top: 50%;
+      left: 50%;
+      width: $rdo-b-w * .4;
+      height: $rdo-b-h * .4;
       border-radius: 100%;
-      background: $clr-accnt;
+      background: $rdo-f-c;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      display: block;
+      transition: .2s;
     }
   }
-  input[type="radio"]:checked + span:after {
+  label {
+    @include font-size($base-fs, $rdo-lh);
+    display: block;
+  }
+  input[type="radio"]:checked + i:after {
     opacity: 1;
-    transition: .1s;
   }
 }
 
 // checkbox
-.form-checkbox {
-  input[type="checkbox"] {
+.frm-checkbox {
+  margin: 0 1rem 0 0;
+  display: flex;
+  input[type="radio"] {
     display: none;
   }
-  span {
+  i {
     display: block;
-    padding: 0 0 0 24px;
+    margin: 0 .25em 0 0;
     position: relative;
-    height: 24px;
-    line-height: 24px;
-    font-size: 16px;
+    width: $ckbx-b-w;
+    @include font-size($base-fs, $ckbx-lh);
     &::before {
       content: "";
       position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: #ededed;
-      border: 1px solid #ccc;
+      top: 50%;
+      left: 50%;
+      width: $ckbx-b-w * .8;
+      height: $ckbx-b-h * .8;
+      background: $ckbx-b-c;
+      border: $ckbx-b-brd-w $ckbx-b-brd-s $ckbx-b-brd-c;
+      transform: translate(-50%, -50%);
+      display: block;
     }
     &::after {
       content: "";
       position: absolute;
-      top: 7px;
-      left: 7px;
-      width: 6px;
-      height: 3px;
-      transform: rotate(-45deg);
-      border-bottom: 2px solid #333;
-      border-left: 2px solid #333;
+      top: 50%;
+      left: 50%;
+      width: $ckbx-b-w * .5;
+      height: $ckbx-b-h * .3;
+      border-left: $ckbx-f-brd-w $ckbx-f-brd-s $ckbx-f-c;
+      border-bottom: $ckbx-f-brd-w $ckbx-f-brd-s $ckbx-f-c;
+      transform: translate(-50%, -50%) rotate(-45deg);
       opacity: 0;
-      transition: .1s;
+      display: block;
+      transition: .2s;
     }
   }
-  input[type="checkbox"]:checked + span:after {
+  label {
+    @include font-size($base-fs, $rdo-lh);
+    display: block;
+  }
+  input[type="checkbox"]:checked + i:after {
     opacity: 1;
-    transition: .1s;
   }
 }
-
-// text-area
-.form-text-area {
-  border: 1px solid $clr-bdr;
-  height: $base-lh-px;
-  font-size: $base-fsp;
-  font-size: $base-fsr;
-  line-height: $base-lh;
-  padding: 0 .6rem;
+// select
+.frm-select {
+  border: $slct-brd-w $slct-brd-s $slct-brd-c;
+  border-radius: $slct-rds;
+  @include font-size($base-fs, $slct-lh);
+  height: ($slct-lh / $base-fs * 1rem) + ($slct-pdg * 2);
+  padding: 0;
+  background: $slct-bg;
+  position: relative;
+  display: inline-block;
+  &::after {
+    position: absolute;
+    width: $slct-tri-w;
+    height: $slct-tri-w * 2 * .85; 
+    border-top: $slct-tri-w * .85 solid $slct-tri-c;
+    border-bottom: $slct-tri-w * .85 solid transparent;
+    border-right: $slct-tri-w / 2 solid transparent;
+    border-left: $slct-tri-w / 2 solid transparent;
+    content: "";
+    top: 50%;
+    right: $slct-tri-w;
+    z-index: 0;
+    transform: translate(0, -25%);
+    pointer-events: none;
+  }
+  select {
+    appearance: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: $slct-pdg $slct-pdg * 3 $slct-pdg $slct-pdg;
+    z-index: 1;
+    background: transparent;
+    &::-ms-expand {
+      display: none;
+    }
+  }
 }
-
+.frm-file {
+  .btn {
+    position: relative;
+    input[type="file"] {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+  .slct-fn {
+    margin: 0 0 0 1rem;
+    input[type="text"] {
+      @include font-size($base-fs, $slct-lh);
+    }
+  }
+}
 .btn {
-  @include box(100px, 60px, 10px);
+  border-radius: $btn-rds;
+  padding: $btn-pdg;
+  @include font-size($base-fs, $btn-h);
+  text-decoration: none;
+  border-width: $btn-brd-w;
+  border-style: $btn-brd-s;
+  text-align: center;
+  &-il {
+    display: inline-block;
+  }
+  &-success {
+    background: $success;
+    border-color: $success;
+    color: $white;
+    &:hover {
+      background: rgba($success, .8);
+    }
+  }
+  &-danger {
+    background: $danger;
+    border-color: $danger;
+    color: $white;
+    &:hover {
+      background: rgba($danger, .8);
+    }
+  }
+  &-warning {
+    background: $warning;
+    border-color: $warning;
+    color: $black;
+    &:hover {
+      background: rgba($warning, .8);
+    }
+  }
+  &-info {
+    background: $info;
+    border-color: $info;
+    color: $white;
+    &:hover {
+      background: rgba($info, .8);
+    }
+  }
+  &-ol-success {
+    border-color: $success;
+    color: $success;
+    &:hover {
+      color: $white;
+      background: $success;
+    }
+  }
+  &-ol-danger {
+    border-color: $danger;
+    color: $danger;
+    &:hover {
+      color: $white;
+      background: $danger;
+    }
+  }
+  &-ol-warning {
+    border-color: $warning;
+    color: $warning;
+    &:hover {
+      color: $black;
+      background: $warning;
+    }
+  }
+  &-ol-info {
+    border-color: $info;
+    color: $info;
+    &:hover {
+      color: $white;
+      background: $info;
+    }
+  }
+  .fa {
+    margin: $btn-fa;
+  }
 }
 
