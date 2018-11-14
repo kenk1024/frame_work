@@ -28,14 +28,40 @@ $base-fw: $fw-normal;
 
 /* ボトムマージン */
 //　h1~h6
-$h-btm-pdg: 1rem;
+$h-btm-pdg: 16px;
 
 // p
-$p-btm-pdg: 1rem;
+$p-btm-pdg: 16px;
 
 // ol,ul,dt
-$lst-btm-pdg: 1rem;
+$lst-btm-pdg: 16px;
 $dt-fw: $fw-medium;
+
+/* ボタンの設定 */
+// ボタンの幅
+$btn-w: 200px;
+
+// ボタンの高さ
+$btn-h: 60px;
+
+// ボタンの文字の大きさ
+$btn-fs: 16;
+$btn-fsp: $btn-fs * 1px;
+$btn-fsr: ($btn-fs / $base-fs) / 1rem;
+
+// ボタンのline-height
+$btn-lh: ($btn-h / $btn-fsp) / 1px;
+// ボタンの角丸
+$btn-r: 5px;
+
+/* アイコンの設定 */
+// アイコンサイズ
+$ico-s: 24px;
+// アイコンカラー
+//$ico-clr: $clr-bg;
+
+$input-r: 5px;
+
 
 /* テーブル */
 // キャプション上パディング
@@ -45,119 +71,20 @@ $tbl-cl-btm-pdg: .5rem;
 // キャプション文字色
 //$tbl-cpt-clr: $clr-txt;
 
-/* フォーム */
-// 入力欄の行の高さ
-$txt-lh: 24;
-// 入力欄の行数
-$txt-lag: 5;
-//　入力欄のpadding
-$txt-pdg: .5rem;
-// 入力欄のborder-radius
-$txt-rds: .25em;
-// 入力欄の線の幅
-$txt-brd-w: 1px;
-// 入力欄の線の種類
-$txt-brd-s: solid;
-// 入力欄の線の色
-$txt-brd-c: $gray-lt;
-// 入力欄の背景色
-$txt-bg: $light;
-
-// ラジオボタン行の高さ
-$rdo-lh: 24;
-// ラジオボタン背面の幅
-$rdo-b-w: 1rem;
-// ラジオボタン背面の高さ
-$rdo-b-h: 1rem;
-// ラジオボタン背面の色
-$rdo-b-c: $light;
-// ラジオボタン背面の線の幅
-$rdo-b-brd-w: 1px;
-// ラジオボタン背面の線の種類
-$rdo-b-brd-s: solid;
-// ラジオボタン背面の線の色
-$rdo-b-brd-c: $gray-lt;
-// ラジオボタン前面の色
-$rdo-f-c: $dark;
-
-// チェックボックス行の高さ
-$ckbx-lh: 24;
-// チェックボックス背面の幅
-$ckbx-b-w: 1rem;
-// チェックボックス背面の高さ
-$ckbx-b-h: 1rem;
-// チェックボックス背面の色
-$ckbx-b-c: $light;
-// チェックボックス背面の線の幅
-$ckbx-b-brd-w: 1px;
-// チェックボックス背面の線の種類
-$ckbx-b-brd-s: solid;
-// チェックボックス背面の線の色
-$ckbx-b-brd-c: $gray-lt;
-// チェックボックス前面の線の幅
-$ckbx-f-brd-w: 2px;
-// チェックボックス前面の線の種類
-$ckbx-f-brd-s: solid;
-// チェックボックス前面の色
-$ckbx-f-c: $dark;
-
-// セレクトの高さ
-$slct-lh: 24;
-//　セレクトのpadding
-$slct-pdg: .5rem;
-// セレクトのborder-radius
-$slct-rds: .25em;
-// セレクトの線の幅
-$slct-brd-w: 1px;
-// セレクトの線の種類
-$slct-brd-s: solid;
-// セレクトの線の色
-$slct-brd-c: $gray-lt;
-// セレクトの背景色
-$slct-bg: $light;
-// セレクトの三角の色
-$slct-tri-c: $dark;
-// セレクトの三角の幅
-$slct-tri-w: .5rem;
-
-// ファイルボタンの高さ
-$flb-h: 40;
-//　ファイルボタンのpadding
-$flb-pdg: 0 2em;
-// ファイルボタンのborder-radius
-$flb-rds: .25em;
-//ファイルボタン文字色
-$flb-c: $white;
-// ファイルボタンの背景色
-$flb-bg: $gray;
-
-// ボタンの高さ
-$btn-h: 40;
-//　ボタンのpadding
-$btn-pdg: 0;
-// ボタンのborder-radius
-$btn-rds: .25em;
-// アイコンの余白
-$btn-fa: 0 .5em 0 0;
-// アウトラインボタンの線の幅
-$btn-brd-w: 1px;
-// アウトラインボタンの線の種類
-$btn-brd-s: solid;
-
 /*--------------------------------------------------------------
 # layoutの設定
 --------------------------------------------------------------*/
 
 /* breakpointの設定 */
 // 大型モニター
-$min-xl: 1280px;
+$min-xl: 1200px;
 $max-lg: $min-xl - 1;
-$min-lg: 960px;
+$min-lg: 992px;
 $max-md: $min-lg - 1;
-$min-md: 600px;
+$min-md: 768px;
 $max-sm: $min-md - 1;
-$min-sm: 480px;
-$max-xs: $min-sm - 1;
+$min-sm: 576px;
+$max-xs: $min-sm -1;
 
 /* headerの高さ */
 $xl-header-height: 50px;
