@@ -1,0 +1,6 @@
+@for $i from 0 through 71 {
+  .red-ajh-#{$i * 5} {
+    $color: (adjust-hue(#ff0000, $i * 5deg);
+    background: desaturate($color, 10%);
+  }
+}

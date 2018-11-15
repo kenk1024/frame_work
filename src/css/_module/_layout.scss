@@ -1,3 +1,54 @@
+@for $i from 1 through 24 {
+  $width: percentage($i / 24);
+  .col-#{$i} {
+    width: $width;
+  }
+}
+
+@include spp {
+  @for $i from 1 through 24 {
+    $width: percentage($i / 24);
+    .col-spp-#{$i} {
+      width: $width;
+    }
+  }
+}
+@include spl {
+  @for $i from 1 through 24 {
+    $width: percentage($i / 24);
+    .col-spl-#{$i} {
+      width: $width;
+    }
+  }
+}
+
+@include tab {
+  @for $i from 1 through 24 {
+    $width: percentage($i / 24);
+    .col-tab-#{$i} {
+      width: $width;
+    }
+  }
+}
+
+@include pc {
+  @for $i from 1 through 24 {
+    $width: percentage($i / 24);
+    .col-pc-#{$i} {
+      width: $width;
+    }
+  }
+}
+
+@include pcl {
+  @for $i from 1 through 24 {
+    $width: percentage($i / 24);
+    .col-pcl-#{$i} {
+      width: $width;
+    }
+  }
+}
+
 /*--------------------------------------------------------------
 # layout
 --------------------------------------------------------------*/
@@ -7,14 +58,9 @@ body {
   height: 100%;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-main {
-  flex: 1;
-}
 
+
+/*
 @media (max-width: $max-xs) {
   body {
     position: relative;
@@ -149,3 +195,4 @@ main {
     height: $xl-footer-height;
   }
 }
+*/
